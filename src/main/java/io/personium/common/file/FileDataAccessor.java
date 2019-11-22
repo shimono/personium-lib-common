@@ -68,9 +68,9 @@ public class FileDataAccessor {
 
     /**
      * Constructor.
-     * @param path 格納ディレクトリ
-     * @param unitUserName ユニットユーザ名
-     * @param fsyncEnabled ファイル書き込み時にfsyncを有効にするか否か（true: 有効, false: 無効）
+     * @param path base directory
+     * @param unitUserName unit user name
+     * @param fsyncEnabled flag for enabling / disabling fsync on writing file. (true: enabled, false: disabled)
      */
     public FileDataAccessor(String path, String unitUserName, boolean fsyncEnabled) {
         this.baseDir = path;
@@ -83,8 +83,8 @@ public class FileDataAccessor {
 
     /**
      * Constructor.
-     * @param path 格納ディレクトリ
-     * @param unitUserName ユニットユーザ名
+     * @param path base directory
+     * @param unitUserName unit user name
      * @param isPhysicalDeleteMode ファイル削除時に物理削除するか（true: 物理削除, false: 論理削除）
      * @param fsyncEnabled ファイル書き込み時にfsyncを有効にするか否か（true: 有効, false: 無効）
      */
@@ -99,11 +99,11 @@ public class FileDataAccessor {
     }
 
     /**
-     * ファイルをストリームにコピーする.
-     * @param filename ファイル名
-     * @param outputStream コピー先ストリーム
+     * Copies a file onto an outputstream.
+     * @param filename File name
+     * @param outputStream target OutputStream
      * @throws FileDataAccessException ファイル入出力で異常が発生した場合にスローする
-     * @return コピーしたバイト数
+     * @return byte size copied
      */
     public long copy(String filename, OutputStream outputStream) throws FileDataAccessException {
         String fullPathName = getFilePath(filename);
@@ -114,8 +114,8 @@ public class FileDataAccessor {
     }
 
     /**
-     * ファイルを削除する. 設定に従い、論理削除(デフォルト)／物理削除を行う 対象ファイルが存在しない場合は何もしない
-     * @param filename ファイル名
+     * Deletes a file. 設定に従い、論理削除(デフォルト)／物理削除を行う 対象ファイルが存在しない場合は何もしない
+     * @param filename File Name
      * @throws FileDataAccessException ファイル入出力で異常が発生した場合にスローする
      */
     public void delete(String filename) throws FileDataAccessException {
@@ -124,7 +124,7 @@ public class FileDataAccessor {
     }
 
     /**
-     * ファイルを削除する（フルパス指定）. 設定に従い、論理削除(デフォルト)／物理削除を行う 対象ファイルが存在しない場合は何もしない
+     * Deletes a file (using full path). 設定に従い、論理削除(デフォルト)／物理削除を行う 対象ファイルが存在しない場合は何もしない
      * @param filepath ファイルパス
      * @throws FileDataAccessException ファイル入出力で異常が発生した場合にスローする
      */
@@ -165,9 +165,9 @@ public class FileDataAccessor {
     }
 
     /**
-     * ファイル名からファイルのフルパスを取得する.
-     * @param filename ファイル名
-     * @return ファイルフルパス
+     * gets full path for a given file name.
+     * @param filename file name
+     * @return full path for the file
      */
     public String getFilePath(String filename) {
         String directory = getSubDirectoryName(filename);
@@ -260,9 +260,9 @@ public class FileDataAccessor {
     }
 
     /**
-     * ファイルディスクリプタの同期.
-     * @param fd ファイルディスクリプタ
-     * @exception SyncFailedException 同期に失敗
+     * syncing a file descriptor.
+     * @param fd file descriptor
+     * @exception SyncFailedException when failed to sync
      */
     public void sync(FileDescriptor fd) throws SyncFailedException {
         fd.sync();

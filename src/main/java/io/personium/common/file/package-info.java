@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 /**
- * バイナリデータ(WebDAV)アクセス.
+ * package for WebDAV file access.
  */
 package io.personium.common.file;
 

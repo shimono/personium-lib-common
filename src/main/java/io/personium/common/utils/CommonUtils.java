@@ -1,6 +1,7 @@
 /**
- * personium.io
- * Copyright 2014-2018 FUJITSU LIMITED
+ * Personium
+ * Copyright 2014-2018 Personium Project Authors
+ *  - FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +43,6 @@ import org.w3c.dom.Node;
 
 /**
  * Class that defines various utility functions.
- * Class name changed from PersoniumCoreUtils from 1.5.0
  */
 public final class CommonUtils {
 
@@ -83,33 +83,33 @@ public final class CommonUtils {
      * Personium's http headers.
      */
     public static class HttpHeaders {
-        /** Accountのパスワード設定・変更を受け付けるヘッダ. */
+        /** X-Personium-Credential Header Key.  */
         public static final String X_PERSONIUM_CREDENTIAL = "X-Personium-Credential";
         /**
-         * X-Personium-Unit-Userヘッダ.
+         * X-Personium-Unit-User Header key.
          * MasterTokenでのアクセス時に、このヘッダがある場合は、
          * ヘッダ値で指定された任意のユニットユーザとして振る舞う。
          */
         public static final String X_PERSONIUM_UNIT_USER = "X-Personium-Unit-User";
-        /** Depthヘッダ. */
+        /** Depth header key. */
         public static final String DEPTH = "Depth";
-        /** X-HTTP-Method-Overrideヘッダ. */
+        /** X-HTTP-Method-Override header key. */
         public static final String X_HTTP_METHOD_OVERRIDE = "X-HTTP-Method-Override";
-        /** X-Overrideヘッダ. */
+        /** X-Override header key. */
         public static final String X_OVERRIDE = "X-Override";
-        /** X-Forwarded-Protoヘッダ. */
+        /** X-Forwarded-Proto header key. */
         public static final String X_FORWARDED_PROTO = "X-Forwarded-Proto";
-        /** X-Forwarded-Hostヘッダ. */
+        /** X-Forwarded-Host header key. */
         public static final String X_FORWARDED_HOST = "X-Forwarded-Host";
-        /** X-Forwarded-Pathヘッダ. */
+        /** X-Forwarded-Path header key. */
         public static final String X_FORWARDED_PATH = "X-Forwarded-Path";
-        /** X-Personium-Unit-Hostヘッダ. */
+        /** X-Personium-Unit-Host header key. */
         public static final String X_PERSONIUM_UNIT_HOST = "X-Personium-Unit-Host";
-        /** X-Personium-Versionヘッダ. */
+        /** X-Personium-Version header key. */
         public static final String X_PERSONIUM_VERSION = "X-Personium-Version";
-        /** X-Personium-Recursiveヘッダ. */
+        /** X-Personium-Recursive header key. */
         public static final String X_PERSONIUM_RECURSIVE = "X-Personium-Recursive";
-        /** X-Personium-RequestKeyヘッダ. */
+        /** X-Personium-RequestKey header key. */
         public static final String X_PERSONIUM_REQUESTKEY = "X-Personium-RequestKey";
         /** X-Personium-EventId header. */
         public static final String X_PERSONIUM_EVENTID = "X-Personium-EventId";
@@ -133,19 +133,19 @@ public final class CommonUtils {
         /** Access-Control-Max-Age. */
         public static final String ACCESS_CONTROL_MAX_AGE = "Access-Control-Max-Age";
 
-        /** Originヘッダ. */
+        /** Origin header key. */
         public static final String ORIGIN = "Origin";
-        /** Allowヘッダ. */
+        /** Allow header key. */
         public static final String ALLOW = "Allow";
-        /** Rangeヘッダ. */
+        /** Range header key. */
         public static final String RANGE = "Range";
-        /** Accept-Rangeヘッダ. */
+        /** Accept-Range header key. */
         public static final String ACCEPT_RANGES = "Accept-Ranges";
-        /** Content-Rangeヘッダ. */
+        /** Content-Range header key. */
         public static final String CONTENT_RANGE = "Content-Range";
 
         /**
-         * 典型的なヘッダ値.
+         * Typical Header Values.
          */
         public static class Value {
             /**

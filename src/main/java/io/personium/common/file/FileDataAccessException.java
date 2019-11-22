@@ -28,8 +28,8 @@ public class FileDataAccessException extends Exception {
     private static final long serialVersionUID = 1L;
 
     /**
-     * コンストラクタ.
-     * @param msg メッセージ
+     * Constructor.
+     * @param msg Message
      * @param cause 原因となったThrowable
      */
     public FileDataAccessException(String msg, Throwable cause) {
